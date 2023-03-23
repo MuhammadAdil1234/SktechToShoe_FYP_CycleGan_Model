@@ -1,11 +1,18 @@
-import {Text, View} from 'react-native';
-import CustomButton from './src/components/custom_button/CustomButton';
-import {AppStrings} from './src/globals/Strings';
+import { Text, View } from 'react-native';
+import MainPage from './src/screens/main/main';
+import { NavigationContainer} from '@react-navigation/native';
+import Drawers from './src/navigation/drawer';
 import Home from './src/screens/home/Home';
-import Signin from './src/screens/signin/Signin';
 import Signup from './src/screens/signup/Signup';
+function App() {
+  return (
+    <NavigationContainer>
+      <Drawers/>
+    </NavigationContainer>
+    // <Home/>
+    // <Signup/>
 
-const App = () => {
-  return (<Signup/>);
-};
+  );
+}
+
 export default App;
