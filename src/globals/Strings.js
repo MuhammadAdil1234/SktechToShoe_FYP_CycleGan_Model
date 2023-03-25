@@ -9,6 +9,12 @@ export const AppStrings = {
     signIn: 'SignIn',
     createAnAccount: 'Create An Account',
     fistName: 'First Name',
-    lastName: 'Last Name'
+    lastName: 'Last Name',
+    selectImage: 'Select Image',
+    takeImage: 'Take Image',
+    saveImage: 'Saved Image',
+    guide: 'Guide',
+    infoText: 'This App for convert Sketch to Shoe',
+    logoName: 'SketchToShoe'
   };
   

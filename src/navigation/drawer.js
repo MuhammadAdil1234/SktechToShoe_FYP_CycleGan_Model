@@ -12,7 +12,7 @@ const Drawers = () => {
   return (
     <Drawer.Navigator
       drawerContent={props => <CustomDrawer {...props} />}
-      screenOptions={{
+      screenOptions={{headerShown: false,
         drawerLabelStyle: {marginLeft: widthPercentageToDP(-5.7), fontSize: RFValue(14)},
         drawerActiveBackgroundColor: '#503F46',
         drawerActiveTintColor: '#fff',
