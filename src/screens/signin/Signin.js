@@ -4,7 +4,7 @@ import CustomButton from '../../components/custom_button/CustomButton';
 import CustomInputBox from '../../components/custom_input/custom_input_box';
 import {AppStrings} from '../../globals/Strings';
 import styles from './Styles';
-const Signin = () => {
+const Signin = ({navigation}) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [check, setCheck] = useState(false);
@@ -31,7 +31,7 @@ const Signin = () => {
             onChangeText={setPassword}
           />
           <View style={styles.buttonContainer}>
-            <CustomButton text="Sign In" width="60"/>
+            <CustomButton text="Sign In" width="60" navigation={navigation}/>
           </View>
         </View>
       </View>

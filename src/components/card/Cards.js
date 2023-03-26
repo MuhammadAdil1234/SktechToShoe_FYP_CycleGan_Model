@@ -13,7 +13,7 @@ const Card = props => {
     <TouchableOpacity
       onPress={() => {
         {
-            props.text == 'Select'
+            props.text == 'Sketch'
               ? props.hiden(true)
               : null;
           //   props.name == 'Booking'

@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import {TouchableOpacity, Text, View} from 'react-native';
 import {widthPercentageToDP} from 'react-native-responsive-screen';
+import {AppStrings} from '../../globals/Strings';
 import styles from './Style';
 const CustomButton = props => {
   return (
@@ -12,6 +13,12 @@ const CustomButton = props => {
             ? props.hiden(true)
             : props.text == 'Cencel'
             ? [props.hidenn(false), props.hidennn(false)]
+            : props.text == AppStrings.getStarted
+            ? props.navigation.navigate('Signup')
+            : props.text == 'Sign Up'
+            ? props.navigation.navigate('Signin')
+            : props.text == 'Sign In'
+            ? props.navigation.navigate('Drawers')
             : null;
           //       props.text == 'Admin'
           //         ? props.navigation.navigate('AdminLogin')

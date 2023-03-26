@@ -4,7 +4,7 @@ import CustomButton from '../../components/custom_button/CustomButton';
 import CustomInputBox from '../../components/custom_input/custom_input_box';
 import {AppStrings} from '../../globals/Strings';
 import styles from './Styles';
-const Signup = () => {
+const Signup = ({navigation}) => {
   var [email, setEmail] = useState('');
   var [lastName, setLastName] = useState('');
   var [password, setPassword] = useState('');
@@ -48,6 +48,7 @@ const Signup = () => {
             <CustomButton
               text="Sign Up"
               width="60"
+              navigation={navigation}
             />
           </View>
         </View>
