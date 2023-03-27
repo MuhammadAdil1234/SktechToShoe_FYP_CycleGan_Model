@@ -13,10 +13,10 @@ const OutputReal = () => {
       </View>
       <View style={styles.buttonContainer}>
         <View style={styles.cencelButton}>
-          <CustomButton text="Cencel" width="34" />
+          <CustomButton text="Exit" width="34" />
         </View>
         <View style={styles.convertButton}>
-          <CustomButton text="Convert" width="34" />
+          <CustomButton text="Save" width="34" />
         </View>
       </View>
     </View>

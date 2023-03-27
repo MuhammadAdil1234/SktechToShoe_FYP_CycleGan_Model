@@ -15,6 +15,8 @@ const Card = props => {
         {
             props.text == 'Sketch'
               ? props.hiden(true)
+              : props.text == 'Files'
+              ? props.navigation.navigate('SavePicture')
               : null;
           //   props.name == 'Booking'
           //     ? props.navigation.navigate('BookingPage') : null;

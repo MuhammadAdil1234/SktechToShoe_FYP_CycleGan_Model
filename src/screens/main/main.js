@@ -12,7 +12,7 @@ import {
 import styles from './Style';
 import Card from '../../components/card/Cards';
 import { AppStrings } from '../../globals/Strings';
-const MainPage = () => {
+const MainPage = (props) => {
   const [popUp, isPopUp] = useState(false);
   const [images, setimages] = useState([
     AppImages.imageOne,
@@ -68,7 +68,7 @@ const MainPage = () => {
       </View>
       <View style={styles.cardContainer}>
         <Card text={'Sketch'} icon={'images-outline'} hiden={isPopUp}/>
-        <Card text={'Files'} icon={'folder-outline'} hiden={isPopUp}/>
+        <Card text={'Files'} icon={'folder-outline'} hiden={isPopUp} navigation={props.navigation}/>
       </View>
       <View style={styles.bottomContainer}>
       <Ionicons
@@ -81,7 +81,7 @@ const MainPage = () => {
       <View>
         <Text style={styles.logoText}>{AppStrings.logoName}</Text>
       </View>
-      {popUp ? <Popup hiden1={popUp} hiden2={isPopUp} /> : null}
+      {popUp ? <Popup hiden1={popUp} hiden2={isPopUp} navigation={props.navigation}/> : null}
     </ScrollView>
   );
 };
