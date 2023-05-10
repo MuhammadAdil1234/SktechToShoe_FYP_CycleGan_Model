@@ -22,23 +22,39 @@ const styles = StyleSheet.create({
     color: '#7B6F72'
   },
   welcomeBack:{
-    fontSize: RFValue(26),
+    fontSize: RFValue(24),
     fontWeight:"bold",
     color: '#503F46'
+  },
+  hintText:{
+    marginLeft: widthPercentageToDP(3),
+    marginBottom: heightPercentageToDP(0.5)
+  },
+  hint: {
+    color: 'red',
+    fontWeight:"bold"
+  },
+  correctInfo:{
+    fontSize: RFValue(14),
+    textAlign: 'center',
+    marginTop: heightPercentageToDP(3),
+    color: 'red',
+    fontWeight:"bold"
   },
   buttonContainer:{
     alignSelf: 'center',
     marginTop: heightPercentageToDP(2.1)
   },
   bottomTextContainer:{
-    alignItems: 'center'
+    alignItems: 'center',
+    marginTop: heightPercentageToDP(26)
   },
   bottomText:{
     fontSize: RFValue(14),
     fontWeight:"bold",
   },
   loginText:{
-    fontSize: RFValue(14),
+    fontSize: RFValue(16),
     fontWeight:"bold",
     color: '#503F46'
   }

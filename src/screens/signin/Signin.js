@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {ScrollView, Image, View, Text} from 'react-native';
+import {ScrollView, Image, View, Text, Alert} from 'react-native';
 import CustomButton from '../../components/custom_button/CustomButton';
 import CustomInputBox from '../../components/custom_input/custom_input_box';
 import {AppStrings} from '../../globals/Strings';
@@ -7,8 +7,9 @@ import styles from './Styles';
 const Signin = ({navigation}) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [userName, setUserName] = useState('');
   const [check, setCheck] = useState(false);
-  var [person, setPerson] = useState({});
+
   return (
     <View style={styles.mainContainer}>
       <View>
@@ -17,6 +18,20 @@ const Signin = ({navigation}) => {
           <Text style={styles.welcomeBack}>{AppStrings.welcomeBack}</Text>
         </View>
         <View>
+          <CustomInputBox
+            icon={'account'}
+            value={userName}
+            label={AppStrings.userName}
+            onChangeText={setUserName}
+          />
+          {userName ? (
+            <View style={styles.hintText}>
+              <Text>
+                <Text style={styles.hint}>hint</Text>: Username must contain
+                letters and digits
+              </Text>
+            </View>
+          ) : null}
           <CustomInputBox
             icon={'email-outline'}
             value={email}
@@ -30,20 +45,41 @@ const Signin = ({navigation}) => {
             label={AppStrings.password}
             onChangeText={setPassword}
           />
+          {password ? (
+            <View style={styles.hintText}>
+              <Text>
+                <Text style={styles.hint}>hint</Text>: Password must atleast 8
+                digits
+              </Text>
+            </View>
+          ) : null}
           <View style={styles.buttonContainer}>
-            <CustomButton text="Sign In" width="60" navigation={navigation}/>
+            <CustomButton
+              text="Sign In"
+              width="60"
+              navigation={navigation}
+              email={email}
+              password={password}
+              userName={userName}
+              setCheck={setCheck}
+            />
           </View>
+          {check ? (
+            <View >
+              <Text style={styles.correctInfo}> Please enters the correct information</Text>
+            </View>
+          ) : null}
         </View>
       </View>
       <View style={styles.bottomTextContainer}>
         <Text style={styles.bottomText}>
-          {AppStrings.doHaveAccount}{' '}
+          {AppStrings.signInGuest}{' '}
           <Text
             style={styles.loginText}
             onPress={() => {
-              navigation.navigate('Signup');
+              navigation.navigate('Drawers');
             }}>
-            {AppStrings.signUp}
+            {AppStrings.guest}
           </Text>
         </Text>
       </View>

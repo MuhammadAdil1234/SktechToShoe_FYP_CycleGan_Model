@@ -13,14 +13,14 @@ const styles = StyleSheet.create({
     backgroundColor: '#f5f5f5', 
   },
   imageContainer: {
-    marginTop: heightPercentageToDP(4),
+    marginTop: heightPercentageToDP(3),
   },
   image: {
     width: widthPercentageToDP(85),
     height: heightPercentageToDP(45),
   },
   buttonContainer: {
-    marginBottom: heightPercentageToDP(8),
+    marginBottom: heightPercentageToDP(6),
   },
 });
 export default styles;
