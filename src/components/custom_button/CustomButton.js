@@ -13,22 +13,29 @@ const CustomButton = props => {
         {
           props.text == 'Picture'
             ? props.hiden(true)
-            : props.text == 'Cencel'
+            : props.text == 'Clear'
             ? [props.hidenn(false), props.hidennn(false)]
             : props.text == AppStrings.getStarted
             ? props.navigation.navigate('Signin')
             : props.text == 'Sign In'
             ? [
                 usernameRegex.test(props.userName) &&
-                (emailRegex.test(props.email) || props.email.endsWith('@gmail.com')) &&
+                (emailRegex.test(props.email) ||
+                  props.email.endsWith('@gmail.com')) &&
                 props.password.length >= 8
-                  ? props.navigation.navigate('Drawers')
+                  ? props.navigation.navigate('Drawers', {userName: props.userName, email: props.email})
                   : props.setCheck(true),
               ]
             : props.text == 'From Gallery'
-            ? props.choosePhotoFromLibrary()
+            ? [
+                props.choosePhotoFromLibrary(),
+                props.hidenn(false),
+                props.hidennn(false),
+              ]
             : props.text == 'Convert'
-            ? props.navigation.navigate('OutputReal')
+            ? props.navigation.navigate('OutputReal', {images: props.images})
+            : props.text == 'Cencel'
+            ? props.navigation.navigate('Drawers')
             : null;
         }
       }}>

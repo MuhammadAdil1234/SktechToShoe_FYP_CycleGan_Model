@@ -2,6 +2,7 @@ export const AppStrings = {
     getStarted: 'Get Started',
     heyThere: 'Hey There',
     welcomeBack: 'Sign-In with Email',
+    welcome: 'Welcome, ',
     email: 'Enter Email',
     password: 'Password',
     userName: 'User Name',
@@ -17,6 +18,10 @@ export const AppStrings = {
     saveImage: 'Saved Image',
     guide: 'Guide',
     infoText: 'This App for convert Sketch to Shoe',
-    logoName: 'SketchToShoe'
+    logoName: 'SketchToShoe',
+    userNameHint: ': Username must contain letters and digits',
+    hint: 'hint',
+    passwordHint: ': Password must atleast 8 digits',
+    enterCorretInfo: 'Please enters the correct information'
   };
   

@@ -17,7 +17,8 @@ const styles = StyleSheet.create({
   },
   topContainer:{
     flexDirection: 'row',
-    marginBottom: heightPercentageToDP(1.7)
+    marginBottom: heightPercentageToDP(1.7),
+    marginLeft: widthPercentageToDP(1.5)
   },
   topText:{
     fontSize: RFValue(18),

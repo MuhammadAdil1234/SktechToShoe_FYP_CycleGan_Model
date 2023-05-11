@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {ScrollView, Image, View, Text, Alert} from 'react-native';
+import {View, Text} from 'react-native';
 import CustomButton from '../../components/custom_button/CustomButton';
 import CustomInputBox from '../../components/custom_input/custom_input_box';
 import {AppStrings} from '../../globals/Strings';
@@ -27,8 +27,8 @@ const Signin = ({navigation}) => {
           {userName ? (
             <View style={styles.hintText}>
               <Text>
-                <Text style={styles.hint}>hint</Text>: Username must contain
-                letters and digits
+                <Text style={styles.hint}>{AppStrings.hint}</Text>
+                {AppStrings.userNameHint}
               </Text>
             </View>
           ) : null}
@@ -48,8 +48,8 @@ const Signin = ({navigation}) => {
           {password ? (
             <View style={styles.hintText}>
               <Text>
-                <Text style={styles.hint}>hint</Text>: Password must atleast 8
-                digits
+                <Text style={styles.hint}>{AppStrings.hint}</Text>
+                {AppStrings.passwordHint}
               </Text>
             </View>
           ) : null}
@@ -65,8 +65,11 @@ const Signin = ({navigation}) => {
             />
           </View>
           {check ? (
-            <View >
-              <Text style={styles.correctInfo}> Please enters the correct information</Text>
+            <View>
+              <Text style={styles.correctInfo}>
+                {' '}
+                {AppStrings.enterCorretInfo}
+              </Text>
             </View>
           ) : null}
         </View>
@@ -77,7 +80,10 @@ const Signin = ({navigation}) => {
           <Text
             style={styles.loginText}
             onPress={() => {
-              navigation.navigate('Drawers');
+              navigation.navigate('Drawers', {
+                userName: 'Guest01',
+                email: 'guest01@gmail.com',
+              });
             }}>
             {AppStrings.guest}
           </Text>

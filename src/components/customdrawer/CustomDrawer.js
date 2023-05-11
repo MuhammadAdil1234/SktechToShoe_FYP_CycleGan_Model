@@ -11,6 +11,10 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import styles from './Style';
 const CustomDrawer = props => {
+  const { state } = props;
+  const currentRoute = state.routes[state.index];
+  const { params } = currentRoute;
+  const { userName, email } = params.params;
   return (
     <View style={styles.mainContainer}>
       <DrawerContentScrollView {...props}>
@@ -22,7 +26,7 @@ const CustomDrawer = props => {
               color="#503F46"
             />
           </View>
-          <Text style={styles.nameText}>Muhammad Adil</Text>
+          <Text style={styles.nameText}>{userName}</Text>
           <View style={{flexDirection: 'row'}}>
             <FontAwesome5
               name="envelope"
@@ -30,7 +34,7 @@ const CustomDrawer = props => {
               color="black"
               style={styles.emailIcon}
             />
-            <Text style={styles.emailText}>muhammadil09441</Text>
+            <Text style={styles.emailText}>{email}</Text>
           </View>
         </View>
         <View style={styles.centerContainer}>
@@ -38,7 +42,7 @@ const CustomDrawer = props => {
         </View>
       </DrawerContentScrollView>
       <View style={styles.bottomContainer}>
-        <TouchableOpacity onPress={() => {}}>
+        <TouchableOpacity onPress={() => {props.navigation.navigate('Signin');}}>
           <View style={styles.textContainer}>
             <Ionicons
               name="exit-outline"

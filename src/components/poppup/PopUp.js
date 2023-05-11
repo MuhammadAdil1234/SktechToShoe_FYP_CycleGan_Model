@@ -31,9 +31,11 @@ const Popup = props => {
             text="From Gallery"
             width="80"
             choosePhotoFromLibrary={choosePhotoFromLibrary}
+            hidenn={isPopUp}
+            hidennn={props.hiden2}
           />
           <CustomButton
-            text="Cencel"
+            text="Clear"
             width="80"
             hidenn={isPopUp}
             hidennn={props.hiden2}

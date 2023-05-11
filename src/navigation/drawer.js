@@ -8,7 +8,7 @@ import Help from '../screens/help/Help';
 import {widthPercentageToDP} from 'react-native-responsive-screen';
 import {RFValue} from 'react-native-responsive-fontsize';
 const Drawer = createDrawerNavigator();
-const Drawers = ({navigation}) => {
+const Drawers = ({route, navigation}) => {
   return (
     <Drawer.Navigator
       drawerContent={props => <CustomDrawer {...props} />}
@@ -21,7 +21,7 @@ const Drawers = ({navigation}) => {
       <Drawer.Screen
         name="Home"
         component={MainPage}
-        initialParams={{navigation: navigation}}
+        initialParams={{params: route.params}}
         options={{
           drawerIcon: ({color}) => (
             <Ionicons name="home-outline" size={widthPercentageToDP(6)} color={color} />
