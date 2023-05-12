@@ -3,7 +3,6 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import Home from '../screens/home/Home';
 import Signin from '../screens/signin/Signin';
-import MainPage from '../screens/main/main';
 import Drawers from './drawer';
 import InputSketch from '../screens/inputsketch/InputSketch';
 import SavePicture from '../screens/savepicture/SavePicture';

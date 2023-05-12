@@ -31,6 +31,7 @@ const Drawers = ({route, navigation}) => {
       <Drawer.Screen
         name="Saved Picture"
         component={SavePicture}
+        initialParams={{params: route.params}}
         options={{
           drawerIcon: ({color}) => (
             <Ionicons name="images" size={widthPercentageToDP(6)} color={color} />
@@ -40,6 +41,7 @@ const Drawers = ({route, navigation}) => {
       <Drawer.Screen
         name="Guide"
         component={Help}
+        initialParams={{params: route.params}}
         options={{
           drawerIcon: ({color}) => (
             <Ionicons
